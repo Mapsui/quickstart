@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MapsuiQuickstart",
+  "display": "standalone",
+  "name": "MapsuiQuickstart",
+  "short_name": "MapsuiQuickstart",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
