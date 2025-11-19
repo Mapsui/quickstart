@@ -3,7 +3,9 @@
 
 <PageTitle>Map</PageTitle>
 
-<MapControlComponent @ref="_mapControl" style="width: 100%; height: 100vh;" />
+<div style="width: 100%; height: 100vh;">
+    <MapControlComponent @ref="_mapControl" />
+</div>
 
 @code {
     private MapControl? _mapControl;

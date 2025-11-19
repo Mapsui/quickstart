@@ -104,7 +104,9 @@ Navigate to the URL shown (typically http://localhost:5000) and you should see a
 - Consider adding a troubleshooting note if the map doesn't render
 
 ### Alternative Consideration
-If the WebAssembly native library issues cannot be easily resolved, consider:
-1. Recommending Blazor Server instead (no WASM compilation issues)
-2. Adding clear troubleshooting steps with exact version numbers and paths
-3. Creating a sample repository with working configuration
+The native library loading issue was successfully resolved by:
+1. Installing the wasm-tools-net8 workload
+2. Setting WasmBuildNative=true in the project file
+3. This enables native compilation during build, properly linking SkiaSharp and HarfBuzzSharp libraries
+
+The solution has been tested and confirmed working with a screenshot showing the successfully rendered map.
