@@ -1,0 +1,75 @@
+From 2cdbacce2391795da65560d83df534ef024cdcc7 Mon Sep 17 00:00:00 2001
+From: GitHub Copilot <copilot@github.com>
+Date: Wed, 19 Nov 2025 17:41:44 +0000
+Subject: [PATCH] Improve MAUI quick start documentation
+
+- Update .NET version from 7.0 to 9.0 (7.0 is out of support)
+- Add Prerequisites section with MAUI workload installation
+- Add command-line alternatives for Visual Studio commands
+- Provide both Visual Studio and CLI project creation options
+- Add command-line package installation option
+- Enhance Step 5 description with expected behavior
+- Add note about platform-specific build requirements
+
+Based on validation testing in Mapsui/quickstart repository.
+---
+ docs/general/markdown/index.md | 30 +++++++++++++++++++++++++++---
+ 1 file changed, 27 insertions(+), 3 deletions(-)
+
+diff --git a/docs/general/markdown/index.md b/docs/general/markdown/index.md
+index 3717b6479..ff189b380 100644
+--- a/docs/general/markdown/index.md
++++ b/docs/general/markdown/index.md
+@@ -21,14 +21,36 @@ Try the quick-start for your favorite framework below.
+ 
+     === "MAUI"
+ 
+-        **Step 1:** Create a new .NET 7.0 MAUI application in Visual Studio.
++        **Prerequisites:**
++        
++        - .NET 9.0 SDK or later installed
++        - For Visual Studio users: MAUI workload selected during installation
++        - For command-line users: Install MAUI workload with `dotnet workload install maui`
+ 
+-        **Step 2:** In the package manager console type:
++        **Step 1:** Create a new .NET 9.0 MAUI application.
++
++        In Visual Studio: File > New > Project > .NET MAUI App
++
++        Or using the command line:
++        
++        ```console
++        dotnet new maui -n MyMapsuiApp
++        ```
++
++        **Step 2:** Add the Mapsui.Maui package.
++
++        In Visual Studio Package Manager Console:
+ 
+         ```console
+         PM> Install-Package Mapsui.Maui
+         ```
+ 
++        Or using the command line:
++
++        ```console
++        dotnet add package Mapsui.Maui
++        ```
++
+         **Step 3:** IMPORTANT: In MauiProgram.cs add **.UseSkiaSharp()** to the builder like this:
+ 
+         ```csharp
+@@ -61,7 +83,9 @@ Try the quick-start for your favorite framework below.
+         ```
+ 
+         **Step 5:**
+-        Run it and you should see a map of the world.
++        Run it and you should see a map of the world displaying OpenStreetMap tiles. You can pan and zoom the map.
++
++        **Note:** The default MAUI template targets multiple platforms (Android, iOS, Windows, macOS). Building for iOS/macOS requires a Mac with Xcode installed. Building for Windows requires Windows with Visual Studio.
+     
+ 	=== "Avalonia"
+         
+-- 
+2.51.2
+
